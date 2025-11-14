@@ -6,11 +6,12 @@ public abstract class Usuario {
     protected String perfil;
 
 
-public Usuario(double id,String nome,int idade, String email) {
+public Usuario(double id,String nome,int idade, String email, String perfil) {
     this.id = id;
     this.nome = nome;
     this.idade = idade;
     this.email = email;
+    this.perfil = perfil;
 }
 
 
