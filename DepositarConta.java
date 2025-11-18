@@ -1,6 +1,6 @@
 public class DepositarConta implements ContaFinanceira {
-    private double saldo;
-    private double valor;
+    protected double saldo;
+    protected double valor;
 
     public DepositarConta(double saldo, double valor) {
         this.saldo = saldo;

@@ -3,7 +3,7 @@ public class Grupo extends Usuario {
     private int qtdMembros;
 
     public Grupo(String nome, Usuarioindividual[] membrosIniciais) {
-        super(Math.random() * 10000, nome, 0, "grupo@local");
+        super(Math.random() * 10000, nome, 0, "grupo@local", "Pj");
         this.membros = new Usuarioindividual[50];
         this.qtdMembros = 0;
 
@@ -27,7 +27,7 @@ public class Grupo extends Usuario {
             return;
         }
 
-        // Evita duplicação
+       
         for (int i = 0; i < qtdMembros; i++) {
             if (membros[i] != null && membros[i].getId() == u.getId()) {
                 System.out.println("Erro: membro já existe no grupo!");

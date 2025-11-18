@@ -1,6 +1,7 @@
+
 public class SacarConta implements ContaFinanceira {
-    private double saldo;
-    private double valor;
+    protected double saldo;
+    protected double valor;
 
     public SacarConta(double saldo, double valor) {
         this.saldo = saldo;
