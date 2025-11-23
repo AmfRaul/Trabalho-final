@@ -1,21 +1,31 @@
+public class SacarConta implements OpcResumo, OpcSacar {
 
-public class SacarConta implements ContaFinanceira {
-    protected double saldo;
-    protected double valor;
+    private double saldoAntes;
+    private double saldoDepois;
 
-    public SacarConta(double saldo, double valor) {
-        this.saldo = saldo;
-        this.valor = valor;
+    public SacarConta(double saldoInicial) {
+        this.saldoAntes = saldoInicial;
+        this.saldoDepois = saldoInicial;
     }
 
     @Override
-    public void executar() {
-        if (valor > 0 && saldo >= valor) {
-            saldo -= valor;
-            System.out.println("Saque de R$" + valor + " realizado com sucesso!");
-            System.out.println("Saldo atual: R$" + saldo);
-        } else {
-            System.out.println("Saldo insuficiente ou valor inválido.");
+    public void sacar(double valor) throws SaldoInsuficienteException {
+        if (valor <= 0 || saldoDepois < valor) {
+            throw new SaldoInsuficienteException("Saldo insuficiente ou valor inválido.");
         }
+
+        saldoAntes = saldoDepois;
+        saldoDepois -= valor;
+    }
+
+    @Override
+    public String resumo() {
+        return "Saque de R$" + (saldoAntes - saldoDepois) +
+               " realizado com sucesso! Saldo antes: R$" + saldoAntes +
+               ", saldo atual: R$" + saldoDepois;
+    }
+
+    public double getSaldoAtual() {
+        return saldoDepois;
     }
 }

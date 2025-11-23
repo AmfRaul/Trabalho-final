@@ -1,4 +1,4 @@
-public class ContaCorrente {
+public class ContaCorrente implements OpcDepositar, OpcSacar{
  private int id;
  private String nome;
  private double saldo;
@@ -17,6 +17,7 @@ public ContaCorrente(int id, String nome, double saldoInicial, double limiteCheq
         return "ContaCorrente"; }
     public double getSaldo() { 
         return saldo; }
+        
     public void depositar(double valor) {
     if (valor > 0) {
     saldo += valor;

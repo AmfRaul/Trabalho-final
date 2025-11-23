@@ -1,4 +1,4 @@
-public class DepositarConta implements ContaFinanceira {
+public class DepositarConta implements OpcResumo {
     protected double saldo;
     protected double valor;
 
@@ -8,13 +8,13 @@ public class DepositarConta implements ContaFinanceira {
     }
 
     @Override
-    public void executar() {
+    public String resumo() {
         if (valor > 0) {
-            saldo += valor;
-            System.out.println("Depósito de R$" + valor + " realizado com sucesso!");
-            System.out.println("Saldo atual: R$" + saldo);
-        } else {
-            System.out.println("Valor inválido para depósito.");
+             double novoSaldo = saldo + valor;
+            return "Depósito de R$" + valor + ". Saldo após operação: R$" + novoSaldo;
+        } 
+        else {
+            return "Valor inválido para depósito.";
         }
     }
 }
