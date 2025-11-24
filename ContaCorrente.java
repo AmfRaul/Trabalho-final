@@ -1,4 +1,4 @@
-public class ContaCorrente implements OpcDepositar, OpcSacar{
+public class ContaCorrente implements ContaFinanceira, OpcDepositar, OpcSacar {
  private int id;
  private String nome;
  private double saldo;

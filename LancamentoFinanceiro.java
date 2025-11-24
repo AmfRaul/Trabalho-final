@@ -31,7 +31,21 @@
     }
     public double getSaldoDepois() {
         return saldoDepois; }
-        
+    
+    public String getTipo() {
+        return tipo;
+    }
+
+    public double getValor() {
+        return valor;
+    }
+    public String getCategoria() { 
+        return categoria; 
+    }
+    public int getData(){
+        return data;
+    }
+    
     public String toString() {
         return "[" + tipo + "] " + categoria + "/" + subcategoria +
                ": R$" + valor +
